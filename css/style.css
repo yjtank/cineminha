@@ -1,0 +1,256 @@
+:root {
+  --ink: #f4f1ea;
+  --muted: #a8a9b1;
+  --night: #0b0d13;
+  --line: rgba(255, 255, 255, 0.1);
+  --amber-light: #f5c878;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  color: var(--ink);
+  background: var(--night);
+  font-family: "DM Sans", sans-serif;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 72px);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 2;
+}
+
+.icon-button {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.icon-button:hover {
+  color: var(--amber-light);
+  background: rgba(231, 170, 88, 0.1);
+  border-color: rgba(231, 170, 88, 0.55);
+}
+.brand {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+
+.featured-film {
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(64px, 10vw, 130px) clamp(20px, 8vw, 115px);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(11, 13, 19, 0.98) 0%,
+      rgba(11, 13, 19, 0.83) 38%,
+      rgba(11, 13, 19, 0.1) 85%
+    ),
+    linear-gradient(0deg, var(--night) 0%, transparent 25%),
+    url("https://www.planocritico.com/wp-content/uploads/2021/10/duna-2-plano-critico.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.featured-film__content {
+  max-width: 600px;
+}
+
+.featured-film__title {
+  max-width: 560px;
+  color: var(--ink);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 7vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+.featured-film__metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  color: #d4d1ca;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+.featured-film__rating {
+  color: var(--amber-light);
+  font-weight: 700;
+}
+.featured-film__description {
+  max-width: 490px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+.featured-film__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+.primary-button {
+  color: #16120d;
+  background: var(--amber-light);
+}
+.secondary-button {
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+.primary-button:hover {
+  background: #ffe0a0;
+}
+.secondary-button:hover {
+  color: var(--amber-light);
+  border-color: rgba(231, 170, 88, 0.5);
+}
+
+.film-shelf {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 46px clamp(20px, 5vw, 72px) 70px;
+}
+.shelf-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.shelf-header h3 {
+  color: var(--ink);
+  font-size: 28px;
+  margin-top: 6px;
+}
+.shelf-link {
+  color: var(--amber-light);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.shelf-link i {
+  margin-left: 5px;
+  transition: transform 180ms ease;
+}
+.shelf-link:hover i {
+  transform: translateX(4px);
+}
+
+.film-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scrollbar-color: #3a3b42 transparent;
+}
+.film-card {
+  flex: 0 0 176px;
+  cursor: pointer;
+}
+.film-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 6px;
+  object-fit: cover;
+  opacity: 0.9;
+  transition:
+    transform 220ms ease,
+    opacity 220ms ease;
+}
+.film-card:hover img {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+.film-card h4 {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 12px;
+}
+.film-card__meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+.film-card__meta b {
+  color: var(--amber-light);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    height: 68px;
+  }
+  .featured-film {
+    min-height: 610px;
+    align-items: end;
+    padding-bottom: 58px;
+    background-position: 62% center;
+  }
+  .featured-film__title {
+    font-size: clamp(42px, 14vw, 64px);
+  }
+  /* .shelf-header {
+    align-items: start;
+    flex-direction: column;
+  } */
+  .film-card {
+    flex-basis: 150px;
+  }
+}
