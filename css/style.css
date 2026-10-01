@@ -98,12 +98,21 @@ body {
 }
 
 .featured-film {
+  isolation: isolate;
   min-height: 590px;
   display: flex;
   align-items: center;
   max-width: 1440px;
   margin: 0 auto;
   padding: clamp(64px, 10vw, 130px) clamp(20px, 8vw, 115px);
+  position: relative;
+}
+
+.featured-film::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background-image:
     linear-gradient(
       90deg,
@@ -112,13 +121,57 @@ body {
       rgba(11, 13, 19, 0.1) 85%
     ),
     linear-gradient(0deg, var(--night) 0%, transparent 25%),
-    url("https://www.planocritico.com/wp-content/uploads/2021/10/duna-2-plano-critico.jpg");
+    var(--featured-backdrop);
   background-size: cover;
   background-position: center;
 }
 
+.featured-film.is-changing::before {
+  animation: featured-fade 700ms ease;
+}
+
+@keyframes featured-fade {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
 .featured-film__content {
   max-width: 600px;
+  animation: featured-content-in 450ms ease;
+}
+
+.featured-film.is-changing .featured-film__content {
+  animation: featured-content-in 450ms ease;
+}
+
+@keyframes featured-content-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.featured-film__indicators {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  right: clamp(20px, 8vw, 115px);
+  bottom: 42px;
+}
+
+.featured-film__indicator {
+  width: 28px;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: rgba(244, 241, 234, 0.35);
+  cursor: pointer;
+  transition: width 180ms ease, background 180ms ease;
+}
+
+.featured-film__indicator:hover,
+.featured-film__indicator.is-active {
+  width: 44px;
+  background: var(--amber-light);
 }
 
 .featured-film__title {
@@ -148,6 +201,12 @@ body {
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 30px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
 }
 .featured-film__actions {
   display: flex;
@@ -227,16 +286,22 @@ body {
   display: flex;
   gap: 16px;
   overflow-x: auto;
+  overflow-y: hidden;
+  align-items: flex-start;
   scrollbar-color: #3a3b42 transparent;
 }
 .film-card {
   flex: 0 0 176px;
   cursor: pointer;
+  width: 176px;
+  min-width: 176px;
+  max-width: 176px;
 }
 .film-card img {
   display: block;
   width: 100%;
   aspect-ratio: 2 / 3;
+  height: auto;
   border-radius: 6px;
   object-fit: cover;
   opacity: 0.9;
@@ -277,10 +342,19 @@ body {
     min-height: 610px;
     align-items: end;
     padding-bottom: 58px;
+  }
+  .featured-film::before {
     background-position: 62% center;
+  }
+  .featured-film__indicators {
+    right: 20px;
+    bottom: 26px;
   }
   .featured-film__title {
     font-size: clamp(42px, 14vw, 64px);
+  }
+  .featured-film__description {
+    display: none;
   }
   /* .shelf-header {
     align-items: start;
