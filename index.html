@@ -10,27 +10,45 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>CINEMINHA | Cinema em casa</title>
   </head>
 
   <body>
     <header class="site-header">
-      <button class="icon-button" type="button" aria-label="Abrir menu">
+      <button class="icon-button" type="button" aria-label="Abrir menu" id="menu">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
 
       <a class="brand" href="index.html" aria-label="Movieverse, início">CINEMINHA</a>
+      
       <button class="icon-button" type="button" aria-label="Abrir perfil">
         <i class="fa-solid fa-user" aria-hidden="true"></i>
       </button>
     </header>
 
+    <aside class="sidebar" id="sidebar">
+      <button class="icon-button" id="close-menu" aria-label="Fechar menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <nav>
+        <a href="#">Início</a>
+        <a href="#">Filmes</a>
+        <a href="#">Séries</a>
+        <a href="#">Minha lista</a>
+      </nav>
+    </aside>
+
     <main>
       <section class="featured-film" aria-labelledby="featured-title">
         <div class="featured-film__content">
-
-          <h2 class="featured-film__title" id="featured-title">Duna: Parte Dois</h2>
+          <h2 class="featured-film__title" id="featured-title">
+            Duna: Parte Dois
+          </h2>
 
           <div class="featured-film__metadata">
             <span>2024</span><span>Ficção científica</span><span>2h 46min</span>
@@ -41,11 +59,14 @@
 
           <p class="featured-film__description">
             Paul Atreides se une a Chani e aos Fremen em uma jornada de vingança
-            e destino pelas areias de Arrakis.</p>
+            e destino pelas areias de Arrakis.
+          </p>
 
           <div class="featured-film__actions">
             <a class="primary-button" href="#catalogo">
-              <i class="fa-solid fa-play" aria-hidden="true"></i> Assistir agora</a>
+              <i class="fa-solid fa-play" aria-hidden="true"></i> Assistir
+              agora</a
+            >
             <a class="secondary-button" href="#catalogo">Ver detalhes</a>
           </div>
         </div>
@@ -57,39 +78,54 @@
             <h3 id="popular-title">Em alta</h3>
           </div>
 
-          <a class="shelf-link" href="#catalogo">Ver tudo
+          <a class="shelf-link" href="#catalogo"
+            >Ver tudo
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
 
         <div class="film-row">
           <article class="film-card">
-            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg"
-              alt="Pôster da série Reacher"/>
+            <img
+              src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg"
+              alt="Pôster da série Reacher"
+            />
             <h4>Reacher</h4>
             <span class="film-card__meta">Ação <b>8.1</b></span>
           </article>
 
           <article class="film-card">
-            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg" alt="Pôster de O Último Desafio"/>
+            <img
+              src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg"
+              alt="Pôster de O Último Desafio"
+            />
             <h4>O último desafio</h4>
             <span class="film-card__meta">Suspense <b>7.8</b></span>
           </article>
 
           <article class="film-card">
-            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg" alt="Pôster de Operação Noturna"/>
+            <img
+              src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg"
+              alt="Pôster de Operação Noturna"
+            />
             <h4>Operação noturna</h4>
             <span class="film-card__meta">Drama <b>8.4</b></span>
           </article>
 
           <article class="film-card">
-            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg" alt="Pôster de Cidade em Chamas"/>
+            <img
+              src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg"
+              alt="Pôster de Cidade em Chamas"
+            />
             <h4>Cidade em chamas</h4>
             <span class="film-card__meta">Crime <b>7.9</b></span>
           </article>
 
           <article class="film-card">
-            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg" alt="Pôster de Horizonte Final"/>
+            <img
+              src="https://media.themoviedb.org/t/p/w220_and_h330_face/f1VCQIG2iCyOookdgOzwtUpwWC0.jpg"
+              alt="Pôster de Horizonte Final"
+            />
             <h4>Horizonte final</h4>
             <span class="film-card__meta">Aventura <b>8.0</b></span>
           </article>
@@ -97,8 +133,7 @@
       </section>
     </main>
 
-    <footer>
-
-    </footer>
+    <footer></footer>
+    <script src="/js/app.js"></script>
   </body>
 </html>

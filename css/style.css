@@ -32,6 +32,42 @@ body {
   z-index: 2;
 }
 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--night);
+  padding: 20px;
+  transform: translate(-100%);
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.sidebar a{
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: .3s ease;
+}
+
+.sidebar a:hover{
+  background-color: var(--muted);
+}
+
 .icon-button {
   display: grid;
   width: 40px;
