@@ -1,4 +1,4 @@
-const TMDB_API_KEY = "edcd52275afd8b8c152c82f1ce39XXXX";
+const TMDB_API_KEY = "SUA_CHAVE_AQUI";
 
 const moviesContainer = document.getElementById("popular-movies");
 const featuredFilm = document.querySelector(".featured-film");
