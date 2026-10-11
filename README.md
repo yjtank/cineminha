@@ -12,11 +12,11 @@ Um catálogo de filmes com uma interface moderna e temática, desenvolvido com H
 
 ## Tecnologias utilizadas
 
-- **HTML5** — estrutura da aplicação.
-- **CSS3** — estilização, layout e responsividade.
-- **JavaScript** — interatividade e consumo da API.
-- **TMDB API** — obtenção de informações e imagens dos filmes.
-- **Font Awesome** — ícones da interface.
+- **HTML5** - estrutura da aplicação.
+- **CSS3** - estilização, layout e responsividade.
+- **JavaScript** - interatividade e consumo da API.
+- **TMDB API** - obtenção de informações e imagens dos filmes.
+- **Font Awesome** - ícones da interface.
 
 ## Funcionalidades
 
