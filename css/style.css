@@ -56,15 +56,15 @@ body {
   margin-top: 30px;
 }
 
-.sidebar a{
+.sidebar a {
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
   color: var(--ink);
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
-.sidebar a:hover{
+.sidebar a:hover {
   background-color: var(--muted);
 }
 
@@ -131,8 +131,12 @@ body {
 }
 
 @keyframes featured-fade {
-  0% { opacity: 0.2; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .featured-film__content {
@@ -145,8 +149,14 @@ body {
 }
 
 @keyframes featured-content-in {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .featured-film__indicators {
@@ -165,7 +175,9 @@ body {
   border-radius: 2px;
   background: rgba(244, 241, 234, 0.35);
   cursor: pointer;
-  transition: width 180ms ease, background 180ms ease;
+  transition:
+    width 180ms ease,
+    background 180ms ease;
 }
 
 .featured-film__indicator:hover,
@@ -174,15 +186,26 @@ body {
   background: var(--amber-light);
 }
 
-.featured-film__title {
-  max-width: 560px;
-  color: var(--ink);
-  font-family: "Playfair Display", serif;
-  font-size: clamp(48px, 7vw, 84px);
-  line-height: 0.98;
-  letter-spacing: -0.02em;
+.featured-film__logo {
+  width: 100%;
+  max-width: 480px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin-bottom: 24px;
 }
+
+.featured-film__logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .featured-film__metadata {
   display: flex;
   flex-wrap: wrap;
@@ -254,14 +277,14 @@ body {
 .film-shelf {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 46px clamp(20px, 5vw, 72px) 70px;
+  padding: 20px clamp(20px, 5vw, 72px) 10px;
 }
 .shelf-header {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 22px;
+  gap: 5px;
+  margin-bottom: 5px;
 }
 .shelf-header h3 {
   color: var(--ink);
@@ -288,7 +311,8 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   align-items: flex-start;
-  scrollbar-color: #3a3b42 transparent;
+  scrollbar-width: thin;
+  scrollbar-color: var(--amber-light) rgba(255, 255, 255, 0.08);
 }
 .film-card {
   flex: 0 0 176px;
@@ -350,8 +374,10 @@ body {
     right: 20px;
     bottom: 26px;
   }
-  .featured-film__title {
-    font-size: clamp(42px, 14vw, 64px);
+  .featured-film__logo {
+    max-width: 340px;
+    height: 110px;
+    margin-bottom: 18px;
   }
   .featured-film__description {
     display: none;
