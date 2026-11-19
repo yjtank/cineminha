@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Detalhes | CINEMINHA</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/details.css">
+</head>
+<body>
+
+  <header class="site-header details-header">
+    <a href="index.html" class="brand">CINEMINHA</a>
+
+    <a href="index.html" class="back-button">
+      ← Voltar
+    </a>
+  </header>
+
+  <main class="movie-details">
+
+    <section class="movie-hero" id="movie-hero">
+      <div class="movie-hero__overlay"></div>
+
+      <div class="movie-hero__content">
+
+        <div class="movie-poster">
+          <img id="detail-poster" src="" alt="Pôster do filme">
+        </div>
+
+        <div class="movie-info">
+
+          <span class="movie-label">DETALHES DO FILME</span>
+
+          <div class="detail-logo" id="detail-logo">
+            <img id="detail-logo-image" src="" alt="">
+          </div>
+
+          <h1 id="detail-title">Carregando...</h1>
+
+          <p class="movie-original-title" id="detail-original"></p>
+
+          <div class="movie-metadata">
+            <span id="detail-year"></span>
+            <span id="detail-runtime"></span>
+            <span class="movie-rating" id="detail-rating"></span>
+          </div>
+
+          <div class="movie-genres" id="detail-genres"></div>
+
+          <p class="movie-overview" id="detail-overview">
+            Carregando sinopse...
+          </p>
+
+          <div class="movie-actions">
+            <a href="#" class="primary-button" id="trailer-button" target="_blank">
+              ▶ Assistir trailer
+            </a>
+
+            <a href="#movie-extra" class="secondary-button">
+              Mais informações
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="movie-extra" id="movie-extra">
+
+      <div class="movie-extra__header">
+        <span class="section-eyebrow">EXPLORE</span>
+        <h2>Sobre o filme</h2>
+      </div>
+
+      <div class="movie-extra__grid">
+
+        <div class="movie-extra__item">
+          <span>Direção</span>
+          <strong id="detail-director">-</strong>
+        </div>
+
+        <div class="movie-extra__item">
+          <span>Status</span>
+          <strong id="detail-status">-</strong>
+        </div>
+
+        <div class="movie-extra__item">
+          <span>Idioma original</span>
+          <strong id="detail-language">-</strong>
+        </div>
+
+        <div class="movie-extra__item">
+          <span>Orçamento</span>
+          <strong id="detail-budget">-</strong>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="movie-cast-section">
+      <div class="movie-extra__header">
+        <span class="section-eyebrow">ELENCO</span>
+        <h2>Quem participa</h2>
+      </div>
+
+      <div class="movie-cast" id="movie-cast"></div>
+    </section>
+
+    <section class="similar-section">
+      <div class="movie-extra__header">
+        <span class="section-eyebrow">RECOMENDAÇÕES</span>
+        <h2>Filmes semelhantes</h2>
+      </div>
+
+      <div class="film-row" id="similar-movies"></div>
+    </section>
+
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/details.js"></script>
+</body>
+</html>
